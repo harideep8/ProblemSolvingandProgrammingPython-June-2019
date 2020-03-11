@@ -1,0 +1,56 @@
+"""
+   Aim :- code to return the income , by satisfying
+          The conditions in the picture
+          For picture look in to Coding monks
+"""
+#declaration
+total=0
+incometax=0
+eses=0
+shec=0
+surcharge=0
+"""
+   Here we use exception handling to prevent 
+   Interpretation of program if user enter like
+      >>>one lakh
+          Or
+      >>>"Five lakh"
+          Or
+      >>>"5677778"
+"""
+try:
+	income=eval(input("enter u r income"))
+	if (income>0 and income<=500000):
+		total=0
+	elif(income>500000 and
+	income<=1000000):
+		incometax=(income-500000)*0.2
+		eses=incometax*0.02
+		shec=incometax*0.01
+		total=incometax+eses+shec
+	elif(income>1000000 and     income<=5000000):
+		incometax=(income-1000000)*0.3+100000
+		eses=incometax*0.02
+		shec=incometax*0.01
+		total=incometax+eses+shec
+	elif(income>5000000 and
+	income<10000000):
+		incometax=(income-1000000)*0.3+100000
+		eses=incometax*0.02
+		shec=incometax*0.01
+		surcharge=income*0.1
+		total = incometacx+eses+shec+surcharge
+	elif(income>10000000):
+		incometax=(income-1000000)*0.3+100000
+		eses=incometax*0.02
+		shec=incometax*0.01
+		surcharge=income*0.15
+		total=incometacx+eses+shec+surcharge
+	else:
+		print("income must be greater than 0")
+	print("tax payable = ",total)
+except  NameError:
+	print("please enter income in numbers only")	
+except:
+	print("somthing went wrong")
+	print("please enter income in numbers  only")
